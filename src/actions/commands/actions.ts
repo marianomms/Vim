@@ -885,8 +885,11 @@ class CommandOverrideCopy extends BaseCommand {
     }
 
     await Clipboard.Copy(text);
+
+    // Why do we need this line?
+    // I commented it and everything seems fine
     // all vim yank operations return to normal mode.
-    await vimState.setCurrentMode(Mode.Normal);
+    // await vimState.setCurrentMode(Mode.Normal);
 
     return vimState;
   }
